@@ -1,0 +1,7 @@
+.idea
+*.iml
+*.DS_Store
+dist.prod/*
+dist.dev/*
+node_modules
+bower_components

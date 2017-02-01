@@ -1,0 +1,83 @@
+<div ng-controller="DashboardCtrl">
+  <div id="demo">
+    <div id="searchFilterWrap">
+      <form id="searchForm">
+        <input type="text" id="searchBox" placeholder="Search by title" data-ng-model="searchTxt" data-ng-model-options="{debounce : 600}" />
+        <i class="mdi mdi-magnify"></i>
+      </form>
+      <div id="sortByWrap">
+        Sort By : <i class="mdi mdi-timer" data-ng-click="sortByTime()"></i><i class="mdi mdi-thumb-up-outline" data-ng-click="sortByLikes()"></i><i class="mdi mdi-eye" data-ng-click="sortByWatch()"></i>
+      </div>
+    </div>
+    <div id="gridWrap">
+      <ul class="dynamic-grid" angular-grid="images" cssGrid="true" angular-grid-instance="instance" direction="ltor" grid-width="350" angular-grid-id="gallery" gutter-size="20" refresh-on-img-load="false" >
+        <li data-ng-repeat="pic in images" class="grid" data-ng-clock>
+          <img ng-src="{{pic.media.m}}" class="grid-img" data-actual-width="{{pic.actualWidth}}" data-actual-height="{{pic.actualHeight}}" />
+
+          <div class="pure-g" style="margin: 20px 10px 0px 10px;">
+            <div class="pure-u-22-24 ">
+              <input type="text" id="searchBox" placeholder="Search by title" data-ng-model="searchTxt" data-ng-model-options="{debounce : 600}" />
+            </div>
+            <div class="pure-u-2-24">
+              <div class="edit-menu"><i class="mdi mdi-plus-circle" style="vertical-align: middle;    margin-left: 5px;"></i></div>
+            </div>
+          </div>
+
+          <div class="img-desc-wrap" >
+            <div style="margin-left:5px;margin-right: 5px;margin-bottom: 25px; max-height:200px;overflow-y: scroll;" ng-if="pic.showContent==true;">
+              <div style="margin-bottom: 10px;">
+                <a>Hello</a>-<span>All about them</span>
+              </div>
+              <div style="margin-bottom: 10px;">
+                <a>Hello</a>-<span>All about them</span>
+              </div>
+              <div style="margin-bottom: 10px;">
+                <a>Hello</a>-<span>All about them</span>
+              </div>
+              <div style="margin-bottom: 10px;">
+                <a>Hello</a>-<span>All about them</span>
+              </div>
+            </div>
+
+            <div class="pure-g">
+              <div class="pure-u-23-24 ">
+                <button class="btn btn-default accordian-btn" ng-click="showContent(pic)">
+                  <i ng-class="{'mdi mdi-chevron-down':pic.showContent==false,'mdi mdi-chevron-up':pic.showContent==true}"></i>
+                </button> </div>
+              <div class="pure-u-1-24">
+                <div class="edit-menu"><i class="mdi mdi-dots-vertical"></i></div>
+              </div>
+            </div>
+
+            <!--<div class="pure-g">-->
+              <!--<div class="pure-u-6-24 ">-->
+                <!--<button class="btn btn-default accordian-btn">Edit</button>-->
+              <!--</div>-->
+              <!--<div class="pure-u-6-24">-->
+                <!--<button class="btn btn-default accordian-btn">Delete</button>-->
+              <!--</div>-->
+            <!--</div>-->
+
+            <!--<div class="text-center">-->
+              <!--<button class="btn btn-default accordian-btn">-->
+                <!--<i class="mdi mdi-chevron-down"></i>-->
+              <!--</button>-->
+
+            <!--</div>-->
+
+
+            <!--<div class="uploaded-date">-->
+              <!--Uploaded on : {{pic.date_taken}}-->
+            <!--</div>-->
+            <!--<div class="likes-watch-wrap">-->
+              <!--<div class="likes"><span class="mdi mdi-thumb-up-outline"></span> {{pic.likes}}</div>-->
+              <!--<div class="watch"><span class="mdi mdi-eye"></span> {{pic.watch}}</div>-->
+            <!--</div>-->
+            <!--<div class="title pull-right" style="color:black"><i class="mdi mdi-doc"></i> 42</div>-->
+          </div>
+          <div>
+
+          </div>
+        </li>
+      </ul>
+</div>

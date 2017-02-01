@@ -1,0 +1,23 @@
+{
+  "name": "myApp",
+  "version": "0.0.0",
+  "authors": "",
+  "private": true,
+  "dependencies": {
+    "angular": "^1.5.5",
+    "angular-sanitize": "^1.5.5",
+    "angular-animate": "^1.5.5",
+    "angular-route": "^1.5.5",
+    "ng-underscore": "^0.1.0",
+    "angular-strap": "^2.3.8",
+    "angular-paging": "^2.2.1",
+    "angular-momentjs": "^0.2.2",
+    "angular-moment": "^0.10.3",
+    "angulargrid": "^0.6.0",
+    "pure": "^0.6.0"
+  },
+  "devDependencies": {},
+  "resolutions": {
+    "angular": "^1.5.5"
+  }
+}
